@@ -1,4 +1,12 @@
-import { Box, Button, ChakraProvider } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ChakraProvider,
+  Editable,
+  EditableInput,
+  EditablePreview,
+  useEditableControls
+} from "@chakra-ui/react";
 import {
   Table,
   Thead,
@@ -12,6 +20,9 @@ import {
 // import "./styles.css";
 
 export default function App() {
+  const onClickText = () => {
+    alert("pushed!");
+  };
   return (
     <ChakraProvider>
       <div className="App">
@@ -27,9 +38,14 @@ export default function App() {
           </Thead>
           <Tbody>
             <Tr>
-              <Td>inches</Td>
+              <Td onClick={onClickText}>inches</Td>
               <Td>millimetres (mm)</Td>
-              <Td isNumeric>25.4</Td>
+              <Td isNumeric>
+                <Editable defaultValue="25.0">
+                  <EditablePreview />
+                  <EditableInput />
+                </Editable>
+              </Td>
             </Tr>
             <Tr>
               <Td>feet</Td>
