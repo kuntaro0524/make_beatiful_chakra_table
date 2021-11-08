@@ -1,2 +1,2 @@
-# make_beatiful_chakra_table
+# jak-myself-jissen
 Created with CodeSandbox
